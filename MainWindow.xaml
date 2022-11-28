@@ -29,7 +29,8 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="0">
+            <Border
+                Grid.Row="0">
                 <StackPanel
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
