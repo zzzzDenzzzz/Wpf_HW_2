@@ -24,5 +24,11 @@ namespace Wpf_HW_2
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Width = 800;
+            Height = 600;
+        }
     }
 }
