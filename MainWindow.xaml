@@ -6,50 +6,71 @@
         xmlns:local="clr-namespace:Wpf_HW_2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <Style TargetType="Border">
-            <Setter Property="Background" Value="Gainsboro"/>
-            <Setter Property="BorderBrush" Value="Gray"/>
-            <Setter Property="BorderThickness" Value="2"/>
-        </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="Image/cafeBack2.jpg"/>
+            </Border.Background>
+        </Border>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
             <Border
-                Grid.Row="0">
+                Grid.Row="0"
+                Background="SandyBrown"
+                CornerRadius="0,0,25,25"/>
                 <StackPanel
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center">
+                <Image
+                    Margin="15"
+                    HorizontalAlignment="Left"
+                    Width="50"
+                    Source="Image/candy.png"/>
+                <TextBlock 
+                    FontFamily="Georgia"
                     VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
-                    <TextBlock Text="StackPanel"/>
-                </StackPanel>
-            </Border>
+                    FontStyle="Italic">
+                    <Span
+                        FontSize="20">my</Span><Span 
+                        FontSize="20"
+                        FontStyle="Normal"
+                        FontFamily="Book Antiqua"
+                        FontWeight="ExtraBold">Candy</Span>
+                    <LineBreak/>
+                    based in 2022
+                </TextBlock>
+            </StackPanel>
+
             <Border Grid.Row="1">
                 <Canvas
+                    Background="SandyBrown"
+                    Width="200"
+                    Height="100"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-                    <TextBlock Text="Canvas"/>
                 </Canvas>
             </Border>
-            <Border Grid.Row="2">
-                <Grid
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
-                    <TextBlock Text="Grid"/>
-                </Grid>
+            <Border
+                Grid.Row="2">
+                <Button
+                    Content="Войти"
+                    FontFamily="Book Antiqua"
+                    FontSize="20"
+                    FontWeight="ExtraBold"
+                    Background="SandyBrown"
+                    Margin="5"
+                    Width="350">
+                </Button>
             </Border>
         </Grid>
 
@@ -58,7 +79,7 @@
             Width="5" 
             HorizontalAlignment="Center"
             VerticalAlignment="Stretch"
-            Background="GreenYellow"/>
+            Background="AntiqueWhite"/>
 
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
@@ -68,32 +89,24 @@
             <DockPanel Grid.Row="0" LastChildFill="True">
                 <Border DockPanel.Dock="Top">
                     <Grid>
-                        <TextBlock
-                                Text="Grid"
-                                Margin="50,5,0,5"/>
                     </Grid>
                 </Border>
                 <Border>
                     <WrapPanel
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                        <TextBlock Text="WrapPanel"/>
                     </WrapPanel>
                 </Border>
             </DockPanel>
             <DockPanel Grid.Row="1" LastChildFill="True">
                 <Border DockPanel.Dock="Top">
                     <Grid>
-                        <TextBlock
-                                Text="Grid"
-                                Margin="50,5,0,5"/>
                     </Grid>
                 </Border>
                 <Border>
                     <StackPanel
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center">
-                        <TextBlock Text="StackPanel"/>
                     </StackPanel>
                 </Border>
             </DockPanel>
