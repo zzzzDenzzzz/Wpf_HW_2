@@ -362,8 +362,17 @@
                 
                 <Border>
                     <StackPanel
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
+                        Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Border>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </Border>
                     </StackPanel>
                 </Border>
             </DockPanel>
