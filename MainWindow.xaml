@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="800"
         Loaded="Window_Loaded">
-    
+
+    <!--кнонка Войти-->
     <Window.Resources>
         <Style x:Key="buttonEnter" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -29,22 +30,24 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="398*"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="385*"/>
+            <ColumnDefinition Width="13*"/>
         </Grid.ColumnDefinitions>
-        <Border>
+        <Border Grid.ColumnSpan="2" Margin="0,0,4,0">
             <Border.Background>
                 <ImageBrush ImageSource="Image/cafeBack2.jpg"/>
             </Border.Background>
         </Border>
-        <Grid Grid.Column="0">
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,4,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            <!--myCandy-->
             <Border
                 Grid.Row="0"
                 Background="SandyBrown"
@@ -73,6 +76,7 @@
                 </StackPanel>
             </Border>
 
+            <!--Мы делаем...-->
             <Border
                 Background="SandyBrown"
                 Width="300"
@@ -119,6 +123,7 @@
                 </Canvas>
             </Border>
 
+            <!--кнопка Войти-->
             <Grid Grid.Row="2">
                 <Button
                     Click="AuthorizationClick"
@@ -132,19 +137,19 @@
 
         <GridSplitter 
             Grid.Column="1"
-            Width="5" 
+            Width="4" 
             HorizontalAlignment="Center"
-            VerticalAlignment="Stretch"
             Background="AntiqueWhite"/>
 
         <Grid
             Background="#FF544032"
-            Grid.Column="2">
+            Grid.Column="1" Grid.ColumnSpan="3" Margin="4,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            <!--популярное-->
             <DockPanel
                 Grid.Row="0"
                 LastChildFill="True">
@@ -164,7 +169,8 @@
                         </Border>
                     </Grid>
                 </Border>
-                
+
+                <!--леденец 50 руб.-->
                 <Border>
                     <WrapPanel
                         Orientation="Horizontal"
@@ -341,7 +347,8 @@
                     </WrapPanel>
                 </Border>
             </DockPanel>
-            
+
+            <!--акции-->
             <DockPanel
                 Grid.Row="1"
                 LastChildFill="True">
@@ -362,6 +369,7 @@
                     </Grid>
                 </Border>
 
+                <!--Акция!...-->
                 <Border>
                     <StackPanel
                         Orientation="Vertical"
