@@ -18,7 +18,14 @@ namespace Wpf_HW_2.ViewModel
             IsEnabledAuth = true;
         }
 
+        /// <summary>
+        /// логин, получаемый из TextBox страницы авторизации
+        /// </summary>
         public string LoginUser { get; set; }
+
+        /// <summary>
+        /// имя пользователя, которое будет выводится при успешной регистрации
+        /// </summary>
         string _userName;
         public string UserName
         {
@@ -30,6 +37,9 @@ namespace Wpf_HW_2.ViewModel
             }
         }
 
+        /// <summary>
+        /// сообщение, которое выводится при авторизации
+        /// </summary>
         string _message;
         public string Message
         {
@@ -41,6 +51,9 @@ namespace Wpf_HW_2.ViewModel
             }
         }
 
+        /// <summary>
+        /// оставшееся количество попыток авторизации
+        /// </summary>
         int _failCount;
         public int FailCount
         {
@@ -60,6 +73,9 @@ namespace Wpf_HW_2.ViewModel
             }
         }
 
+        /// <summary>
+        /// состояние кнопки Войти окна авторизации
+        /// </summary>
         bool _isEnabledAuth;
         public bool IsEnabledAuth
         {
@@ -71,6 +87,10 @@ namespace Wpf_HW_2.ViewModel
             }
         }
 
+        /// <summary>
+        /// проверка логина и пароля, введенных в окне авторизации
+        /// </summary>
+        /// <returns>если логин и пароль совпадают возвращает true иначе false</returns>
         public bool Authorization(string password)
         {
             if (LoginUser == null)
@@ -82,17 +102,24 @@ namespace Wpf_HW_2.ViewModel
                 return false;
             }
             var context = new UsersDB();
+            // проверяет логин, введеный в окне авторизации на соответсвие логину из UsersDB
             var access = context.Users.Where(x => x.Login == LoginUser).FirstOrDefault();
+            // если логин и пароль совпадают
             if (access != null && access.IsAuhtorization(password))
             {
                 Global.User = access;
+                // присваиваем текущему пользователю имя из UsersDB
                 UserName = access.Name;
                 return true;
             }
+            // если логин или пароль не совпадают уменьшаем количество попыток
             FailCount--;
             return false;
         }
 
+        /// <summary>
+        /// отключает кнопку Войти окна авторизации на 10 с после 3 неудачных попыток авторизации
+        /// </summary>
         async Task StartPause()
         {
             IsEnabledAuth = false;

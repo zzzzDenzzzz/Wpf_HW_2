@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Wpf_HW_2.Model
 {
     internal class UsersDB
     {
+        /// <summary>
+        /// база данных пользователей
+        /// </summary>
         public List<User> Users { get; set; } = new List<User>()
         {
-            new User("1","111","111"),
-            new User("2","222","222"),
-            new User("3","333","333"),
-            new User("4","444","444"),
-            new User("5","555","555"),
+            new User("Name1","Login1","Password1"),
+            new User("Name2","Login2","Password2"),
+            new User("Name3","Login3","Password3"),
+            new User("Name4","Login4","Password4"),
+            new User("Name5","Login5","Password5"),
         };
     }
 }

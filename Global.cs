@@ -8,10 +8,7 @@ namespace Wpf_HW_2
 
         public static User User
         {
-            get
-            {
-                return _user;
-            }
+            get { return _user; }
             set
             {
                 if (value != null)
