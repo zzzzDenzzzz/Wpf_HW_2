@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Wpf_HW_2
 {
@@ -28,7 +15,14 @@ namespace Wpf_HW_2
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Width = 800;
-            Height = 600;
+            Height = 650;
+        }
+
+        private void AuthorizationClick(object sender, RoutedEventArgs e)
+        {
+            Window authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Owner = this;
+            authorizationWindow.ShowDialog();
         }
     }
 }

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_HW_2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800"
+        Title="MainWindow" Height="650" Width="800"
         Loaded="Window_Loaded">
+    
     <Window.Resources>
         <Style x:Key="buttonEnter" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -120,11 +121,12 @@
 
             <Grid Grid.Row="2">
                 <Button
-                        Content="Войти"
-                        FontSize="20"
-                        FontFamily="Book Antiqua"
-                        FontWeight="Bold"
-                        Style="{StaticResource ResourceKey=buttonEnter}"/>
+                    Click="AuthorizationClick"
+                    Content="Войти"
+                    FontSize="20"
+                    FontFamily="Book Antiqua"
+                    FontWeight="Bold"
+                    Style="{StaticResource ResourceKey=buttonEnter}"/>
             </Grid>
         </Grid>
 
@@ -359,7 +361,7 @@
                         </Border>
                     </Grid>
                 </Border>
-                
+
                 <Border>
                     <StackPanel
                         Orientation="Vertical"
