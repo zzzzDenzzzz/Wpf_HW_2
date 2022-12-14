@@ -107,7 +107,7 @@ namespace Wpf_HW_2.ViewModel
             // если логин и пароль совпадают
             if (access != null && access.IsAuhtorization(password))
             {
-                Global.User = access;
+                UserContext.CreateUserContext(access);
                 // присваиваем текущему пользователю имя из UsersDB
                 UserName = access.Name;
                 return true;

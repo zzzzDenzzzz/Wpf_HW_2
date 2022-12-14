@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Wpf_HW_2
+namespace Wpf_HW_2.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для OrdersPage.xaml
     /// </summary>
-    public partial class MainPage : UserControl
+    public partial class OrdersPage : UserControl
     {
-        public MainPage()
+        public OrdersPage()
         {
             InitializeComponent();
         }

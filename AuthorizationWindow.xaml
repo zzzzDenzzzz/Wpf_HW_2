@@ -39,7 +39,7 @@
                 </Grid.ColumnDefinitions>
                 <Label
                     Grid.Column="0"
-                    Content="ЛОГИН"/>
+                    Content="Логин"/>
                 <TextBox
                     Grid.Column="1"
                     Text="{Binding Path=LoginUser,
@@ -57,7 +57,7 @@
                 </Grid.ColumnDefinitions>
                 <Label
                     Grid.Column="0"
-                    Content="ПАРОЛЬ"/>
+                    Content="Пароль"/>
                 <PasswordBox
                     Grid.Column="1"
                     x:Name="passwordBox"/>
@@ -67,7 +67,7 @@
             <Button
                 Content="ВОЙТИ"
                 Height="50"
-                Margin="55 15 50 0"
+                Margin="50 15 50 0"
                 Click="Button_Click"
                 Background="{StaticResource baseColor}"
                 IsEnabled="{Binding Path=IsEnabledAuth}"/>
