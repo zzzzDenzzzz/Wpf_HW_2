@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Wpf_HW_2.Model
@@ -11,10 +11,10 @@ namespace Wpf_HW_2.Model
 
         UsersDB()
         {
-            Orders = new List<Order>()
+            Orders = new ObservableCollection<Order>()
             {
                 new Order(){Id = 1, Client = "Клиент1", Date = new DateTime(2022, 12, 10),
-                    Products = new List<OrderProduct>()
+                    Products = new ObservableCollection<OrderProduct>()
                     {
                         new OrderProduct(){Product = Products.First(x => x.Id == 1), Quantity = 11},
                         new OrderProduct(){Product = Products.First(x => x.Id == 2), Quantity = 2},
@@ -23,7 +23,7 @@ namespace Wpf_HW_2.Model
                 },
 
                 new Order(){Id = 2, Client = "Клиент2", Date = new DateTime(2022, 12, 11),
-                    Products = new List<OrderProduct>()
+                    Products = new ObservableCollection<OrderProduct>()
                     {
                         new OrderProduct(){Product = Products.First(x => x.Id == 4), Quantity = 2},
                         new OrderProduct(){Product = Products.First(x => x.Id == 2), Quantity = 4},
@@ -32,7 +32,7 @@ namespace Wpf_HW_2.Model
                 },
 
                 new Order(){Id = 3, Client = "Клиент3", Date = new DateTime(2022, 12, 12),
-                    Products = new List<OrderProduct>()
+                    Products = new ObservableCollection<OrderProduct>()
                     {
                         new OrderProduct(){Product = Products.First(x => x.Id == 3), Quantity = 13},
                         new OrderProduct(){Product = Products.First(x => x.Id == 2), Quantity = 2},
@@ -41,7 +41,7 @@ namespace Wpf_HW_2.Model
                 },
 
                 new Order(){Id = 4, Client = "Клиент4", Date = new DateTime(2022, 12, 10),
-                    Products = new List<OrderProduct>()
+                    Products = new ObservableCollection<OrderProduct>()
                     {
                         new OrderProduct(){Product = Products.First(x => x.Id == 6), Quantity = 10},
                         new OrderProduct(){Product = Products.First(x => x.Id == 2), Quantity = 2},
@@ -49,9 +49,18 @@ namespace Wpf_HW_2.Model
                 },
 
                 new Order(){Id = 5, Client = "Клиент5", Date = new DateTime(2022, 12, 13),
-                    Products = new List<OrderProduct>()
+                    Products = new ObservableCollection<OrderProduct>()
                     {
                         new OrderProduct(){Product = Products.First(x => x.Id == 4), Quantity = 1},
+                    }
+                },
+
+                new Order(){Id = 6, Client = "Клиент6", Date = new DateTime(2022, 12, 13),
+                    Products = new ObservableCollection<OrderProduct>()
+                    {
+                        new OrderProduct(){Product = Products.First(x => x.Id == 4), Quantity = 10},
+                        new OrderProduct(){Product = Products.First(x => x.Id == 3), Quantity = 10},
+                        new OrderProduct(){Product = Products.First(x => x.Id == 2), Quantity = 12},
                     }
                 },
             };
@@ -59,7 +68,7 @@ namespace Wpf_HW_2.Model
         /// <summary>
         /// база данных пользователей
         /// </summary>
-        public List<User> Users { get; set; } = new List<User>()
+        public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>()
         {
             new User("Name1","Login1","Password1"),
             new User("Name2","Login2","Password2"),
@@ -68,7 +77,7 @@ namespace Wpf_HW_2.Model
             new User("Name5","Login5","Password5"),
         };
 
-        public List<Product> Products { get; set; } = new List<Product>()
+        public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>()
         {
             new Product(){Id = 1, Name = "Конфета шоколадная", Price = 100M},
             new Product(){Id = 2, Name = "Леденец\"Петушок\"", Price = 50M},
@@ -78,6 +87,6 @@ namespace Wpf_HW_2.Model
             new Product(){Id = 6, Name = "Цукаты из ананаса", Price = 299M},
         };
 
-        public List<Order> Orders { get; set; }
+        public ObservableCollection<Order> Orders { get; set; }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf_HW_2.ViewModel;
 
 namespace Wpf_HW_2.Pages
 {
@@ -20,9 +21,13 @@ namespace Wpf_HW_2.Pages
     /// </summary>
     public partial class OrdersPage : UserControl
     {
+        OrdersVM _vm;
+
         public OrdersPage()
         {
             InitializeComponent();
+            _vm = new OrdersVM();
+            DataContext = _vm;
         }
     }
 }

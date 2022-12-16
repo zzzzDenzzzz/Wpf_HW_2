@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,10 @@ namespace Wpf_HW_2.Model
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public string Client { get; set; }
-        public List<OrderProduct> Products { get; set; }
+        public ObservableCollection<OrderProduct> Products { get; set; }
 
-        public decimal Price
-        {
-            get => Products.Sum(p => p.Product.Price * p.Quantity);
-        }
+        public decimal Price => Products.Sum(p => p.Product.Price * p.Quantity);
+
+        //public decimal QuantityProducts => Products.Count;
     }
 }

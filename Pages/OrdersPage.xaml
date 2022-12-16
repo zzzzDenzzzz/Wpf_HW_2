@@ -23,19 +23,61 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
 
-        <ListView Grid.Row="1">
+        <Grid Grid.Row="0">
+            <DockPanel Margin="10">
+                <DockPanel Height="20"
+                           Width="300"
+                           HorizontalAlignment="Right">
+                    <Button Content="Search"
+                            DockPanel.Dock="Right"/>
+                    <TextBox/>
+                </DockPanel>
+            </DockPanel>
+        </Grid>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Path=Orders}"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel>
-                        
-                    </WrapPanel>
+                    <WrapPanel HorizontalAlignment="Center"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        
-                    </Grid>
+                    <Viewbox MaxWidth="200">
+                        <Border Background="White"
+                                CornerRadius="25"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                Width="170"
+                                Height="170">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock HorizontalAlignment="Center"
+                                            TextAlignment="Center"
+                                            FontWeight="Bold">
+                        <Run FontSize="20" Text="{Binding Path=Id,
+                            StringFormat='Заказ {0}'}"/>
+                        <LineBreak/>
+                        <Run FontSize="10" Text="{Binding Path=Date, StringFormat=d,
+                            ConverterCulture='ru-RU'}"/>
+                                </TextBlock>
+                                <StackPanel Grid.Row="1">
+                                    <TextBlock Text="{Binding Path=Client,
+                                               StringFormat='Клиент: {0}'}"
+                                               TextWrapping="Wrap"/>
+                                    <TextBlock Text="{Binding Path=Products.Count,
+                                               StringFormat='Количество товара: {0}'}"/>
+                                    <TextBlock Text="{Binding Path=Price,
+                                               StringFormat='Итого: {0}'}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </Viewbox>
                 </DataTemplate>
             </ListView.ItemTemplate>
             
@@ -44,21 +86,32 @@
         <!--<Button Background="GreenYellow" Content="Hello"
                 Template="{StaticResource ButtonTemplate}"/>-->
 
-        <Viewbox Grid.RowSpan="2">
+        <!--<Viewbox Grid.RowSpan="2">
             <Border 
                 Background="White"
                 CornerRadius="25"
                 BorderBrush="Black"
                 BorderThickness="1">
-                <Grid>
+                <Grid Margin="10">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="16.12.2022"/>
+                    <TextBlock HorizontalAlignment="Center"
+                               TextAlignment="Center"
+                               FontWeight="Bold">
+                        <Run FontSize="20">Заказ 1</Run>
+                        <LineBreak/>
+                        <Run FontSize="10">16.12.2022</Run>
+                    </TextBlock>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="Клиент: Клиент1"/>
+                        <TextBlock Text="Количество товаров: 0"/>
+                        <TextBlock Text="Итого: 0"/>
+                    </StackPanel>
                 </Grid>
             </Border>
-        </Viewbox>
+        </Viewbox>-->
         
 
     </Grid>
