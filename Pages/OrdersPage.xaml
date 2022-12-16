@@ -44,5 +44,22 @@
         <!--<Button Background="GreenYellow" Content="Hello"
                 Template="{StaticResource ButtonTemplate}"/>-->
 
+        <Viewbox Grid.RowSpan="2">
+            <Border 
+                Background="White"
+                CornerRadius="25"
+                BorderBrush="Black"
+                BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="16.12.2022"/>
+                </Grid>
+            </Border>
+        </Viewbox>
+        
+
     </Grid>
 </UserControl>

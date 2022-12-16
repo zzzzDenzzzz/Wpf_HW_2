@@ -101,7 +101,7 @@ namespace Wpf_HW_2.ViewModel
             {
                 return false;
             }
-            var context = new UsersDB();
+            var context = UsersDB.Context;
             // проверяет логин, введеный в окне авторизации на соответсвие логину из UsersDB
             var access = context.Users.Where(x => x.Login == LoginUser).FirstOrDefault();
             // если логин и пароль совпадают
