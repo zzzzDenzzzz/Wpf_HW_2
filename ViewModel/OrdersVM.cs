@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Wpf_HW_2.Model;
@@ -13,6 +14,7 @@ namespace Wpf_HW_2.ViewModel
         }
 
         public List<Order> Orders { get; set; }
+        public List<Order> SelectedOrders { get; set; }
 
         string _searchText;
         public string SearchText
@@ -21,10 +23,34 @@ namespace Wpf_HW_2.ViewModel
             set
             {
                 _searchText = value;
-                Orders = UsersDB.Context.Orders.Where(x => (int.TryParse(_searchText, out int id) && x.Id == id) || _searchText == string.Empty).ToList();
-                OnPropertyChanged("Orders");
+
                 OnPropertyChanged();
             }
+        }
+
+        public void UpdateListOrders()
+        {
+            Orders = UsersDB.Context.Orders
+                .Where(x => _searchText == string.Empty || _searchText == null
+                    || (int.TryParse(_searchText, out int id) && x.Id == id)
+                    || x.Client.ToLower().Contains(_searchText.ToLower())
+                    || (DateTime.TryParse(_searchText, out DateTime date) && date == x.Date)
+                    || (x.Products.FirstOrDefault(y => y.Product.Name.ToLower().Contains(_searchText.ToLower())) != null))
+                .ToList();
+            OnPropertyChanged("Orders");
+        }
+
+        public void DeleteOrders()
+        {
+            foreach (var item in SelectedOrders)
+            {
+                UsersDB.Context.Orders.Remove(item);
+            }
+
+            Orders = UsersDB.Context.Orders.ToList();
+
+            SelectedOrders.Clear();
+            OnPropertyChanged(nameof(Orders));
         }
     }
 }

@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Wpf_HW_2.Model
 {
     /// <summary>
     /// заказ
     /// </summary>
-    internal class Order
+    public class Order
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
