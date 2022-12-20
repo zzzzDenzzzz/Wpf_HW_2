@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Wpf_HW_2.Pages"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--окно создания, чтения, редактирования, удаления заказов-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

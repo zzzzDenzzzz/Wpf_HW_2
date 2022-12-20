@@ -31,18 +31,24 @@ namespace Wpf_HW_2.Pages
             _vm = new OrdersVM();
             DataContext = _vm;
         }
-
+        /// <summary>
+        /// обработчик нажатия кнопки "Поиск"
+        /// </summary>
         private void SearchClick(object sender, RoutedEventArgs e)
         {
             _vm.UpdateListOrders();
         }
-
+        /// <summary>
+        /// обработчик нажатия кнопки "Удалить"
+        /// </summary>
         private void DeleteOrders_Click(object sender, RoutedEventArgs e)
         {
             _vm.SelectedOrders = OrdersLV.SelectedItems.Cast<Order>().ToList();
             _vm.DeleteOrders();
         }
-
+        /// <summary>
+        /// обработчик нажатия кнопки "Изменить"
+        /// </summary>
         private void ModifyOrder_Click(object sender, RoutedEventArgs e)
         {
 

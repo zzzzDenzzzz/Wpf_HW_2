@@ -21,7 +21,6 @@
             Login = login;
             Password = password;
         }
-
         /// <summary>
         /// проверка пароля пользователя
         /// </summary>

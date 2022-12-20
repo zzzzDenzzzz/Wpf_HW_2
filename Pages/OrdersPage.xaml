@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Wpf_HW_2"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--окно вывода информации о заказах-->
     <!--<UserControl.Resources>
         <ControlTemplate TargetType="Button" x:Key="ButtonTemplate">
             <Border Background="{TemplateBinding Background}" CornerRadius="50">

@@ -5,8 +5,13 @@
     /// </summary>
     public class OrderProduct
     {
+        /// <summary>
+        /// товар
+        /// </summary>
         public Product Product { get; set; }
-
+        /// <summary>
+        /// количество товаров
+        /// </summary>
         public int Quantity { get; set; }
     }
 }

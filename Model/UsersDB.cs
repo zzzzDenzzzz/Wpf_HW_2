@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Wpf_HW_2.Model
 {
+    /// <summary>
+    /// данные, используемые приложением
+    /// </summary>
     internal class UsersDB
     {
         static UsersDB _context;
@@ -66,7 +69,7 @@ namespace Wpf_HW_2.Model
             };
         }
         /// <summary>
-        /// база данных пользователей
+        /// список пользователей
         /// </summary>
         public ObservableCollection<User> Users { get; set; } = new ObservableCollection<User>()
         {
@@ -76,7 +79,9 @@ namespace Wpf_HW_2.Model
             new User("Name4","Login4","Password4"),
             new User("Name5","Login5","Password5"),
         };
-
+        /// <summary>
+        /// список товаров
+        /// </summary>
         public ObservableCollection<Product> Products { get; set; } = new ObservableCollection<Product>()
         {
             new Product(){Id = 1, Name = "Конфета шоколадная", Price = 100M},
@@ -86,7 +91,9 @@ namespace Wpf_HW_2.Model
             new Product(){Id = 5, Name = "Мармеладные мишки", Price = 349M},
             new Product(){Id = 6, Name = "Цукаты из ананаса", Price = 299M},
         };
-
+        /// <summary>
+        /// список заказов
+        /// </summary>
         public ObservableCollection<Order> Orders { get; set; }
     }
 }

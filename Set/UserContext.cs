@@ -39,12 +39,10 @@ namespace Wpf_HW_2
                 new UserContext(user);
             }
         }
-
         /// <summary>
         /// при изменениии значений свойств объекта генерируется это событие 
         /// </summary>
         public static event PropertyChangedEventHandler PropertyChanged;
-
         /// <summary>
         /// когда объект класса изменяет значение свойства, то он через событие PropertyChanged извещает систему об изменении свойства.
         /// А система обновляет все привязанные объекты
