@@ -17,5 +17,15 @@ namespace Wpf_HW_2.Pages
             _vm = new OrderCRUD_VM(order);
             DataContext = _vm;
         }
+
+        private void DeleteProduct_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _vm.DeleteProduct();
+        }
+
+        private void DG_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            _vm.OnPropertyChanged(nameof(_vm.Price));
+        }
     }
 }

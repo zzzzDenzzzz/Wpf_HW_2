@@ -51,6 +51,8 @@ namespace Wpf_HW_2.Pages
         /// </summary>
         private void ModifyOrder_Click(object sender, RoutedEventArgs e)
         {
+            _vm.SelectedOrders = OrdersLV.SelectedItems.Cast<Order>().ToList();
+            // выбираем первую запись из списка заказов
             Order order = _vm.SelectedOrders.FirstOrDefault();
             if (order != null)
             {

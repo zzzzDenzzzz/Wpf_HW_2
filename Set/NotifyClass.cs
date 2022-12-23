@@ -6,7 +6,7 @@ namespace Wpf_HW_2
     /// <summary>
     /// класс, реализующий интерфейс INotifyPropertyChanged
     /// </summary>
-    internal class NotifyClass : INotifyPropertyChanged
+    public class NotifyClass : INotifyPropertyChanged
     {
         /// <summary>
         /// при изменениии значений свойств объекта генерируется это событие 
@@ -16,7 +16,7 @@ namespace Wpf_HW_2
         /// когда объект класса изменяет значение свойства, то он через событие PropertyChanged извещает систему об изменении свойства.
         /// А система обновляет все привязанные объекты
         /// </summary>
-        protected virtual void OnPropertyChanged([CallerMemberName] string property = null)
+        public virtual void OnPropertyChanged([CallerMemberName] string property = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }

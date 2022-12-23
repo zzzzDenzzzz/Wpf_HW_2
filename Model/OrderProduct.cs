@@ -3,7 +3,7 @@
     /// <summary>
     /// хранит количество товаров из заказа
     /// </summary>
-    public class OrderProduct
+    public class OrderProduct : NotifyClass
     {
         /// <summary>
         /// товар
@@ -12,7 +12,17 @@
         /// <summary>
         /// количество товаров
         /// </summary>
-        public int Quantity { get; set; }
+        int _quantity;
+        public int Quantity
+        {
+            get => _quantity;
+            set
+            {
+                _quantity = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(Price));
+            } 
+        }
         /// <summary>
         /// общая стоимость товаров
         /// </summary>
