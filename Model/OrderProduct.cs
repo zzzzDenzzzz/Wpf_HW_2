@@ -13,5 +13,9 @@
         /// количество товаров
         /// </summary>
         public int Quantity { get; set; }
+        /// <summary>
+        /// общая стоимость товаров
+        /// </summary>
+        public decimal Price => Product.Price * Quantity;
     }
 }

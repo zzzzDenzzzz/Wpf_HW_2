@@ -51,7 +51,13 @@ namespace Wpf_HW_2.Pages
         /// </summary>
         private void ModifyOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            Order order = _vm.SelectedOrders.FirstOrDefault();
+            if (order != null)
+            {
+                // страница, отв. за создание заказа
+                var page = new OrderCRUD(order);
+                PageContext.CurrentPageContext.AddPage(page);
+            }
         }
     }
 }

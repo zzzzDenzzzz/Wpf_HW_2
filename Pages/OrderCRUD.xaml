@@ -24,7 +24,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Content="ID заказа"/>
                     <TextBlock Grid.Column="1"
-                               Text="1"
+                               Text="{Binding Path=Id}"
                                VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
@@ -33,7 +33,8 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Дата заказа"/>
-                    <DatePicker Grid.Column="1"/>
+                    <DatePicker Grid.Column="1"
+                                SelectedDate="{Binding Path=Date}"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -41,7 +42,8 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Клиент"/>
-                    <TextBox Grid.Column="1"/>
+                    <TextBox Grid.Column="1"
+                             Text="{Binding Path=Client}"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -50,7 +52,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Content="Количество продукции"/>
                     <TextBlock Grid.Column="1"
-                               Text="5"
+                               Text="{Binding Path=Products.Count}"
                                VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
@@ -60,7 +62,7 @@
                     </Grid.ColumnDefinitions>
                     <Label Content="Итого: "/>
                     <TextBlock Grid.Column="1"
-                               Text="100"
+                               Text="{Binding Path=Price}"
                                VerticalAlignment="Center"/>
                 </Grid>
             </StackPanel>
@@ -72,14 +74,19 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <DataGrid AutoGenerateColumns="False">
+            <DataGrid AutoGenerateColumns="False"
+                      ItemsSource="{Binding Path=Products}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№"/>
                     <DataGridTextColumn Header="Наименование"
-                                        Width="Auto"/>
-                    <DataGridTextColumn Header="Количество"/>
-                    <DataGridTextColumn Header="Цена"/>
-                    <DataGridTextColumn Header="Сумма"/>
+                                        Width="Auto"
+                                        Binding="{Binding Path=Product.Name}"/>
+                    <DataGridTextColumn Header="Количество"
+                                        Binding="{Binding Path=Quantity}"/>
+                    <DataGridTextColumn Header="Цена"
+                                        Binding="{Binding Path=Product.Price}"/>
+                    <DataGridTextColumn Header="Сумма"
+                                        Binding="{Binding Path=Price}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
