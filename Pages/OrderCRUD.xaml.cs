@@ -27,5 +27,11 @@ namespace Wpf_HW_2.Pages
         {
             _vm.OnPropertyChanged(nameof(_vm.Price));
         }
+
+        private void AddProduct_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var sw = new SelectProductWindow();
+            sw.ShowDialog();
+        }
     }
 }

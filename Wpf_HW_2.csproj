@@ -160,5 +160,8 @@
     <Resource Include="Image\Lollipop.png" />
     <Resource Include="Image\purepng.com-christmas-candy.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\folder.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

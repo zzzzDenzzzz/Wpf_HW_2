@@ -3,9 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Wpf_HW_2"
+        xmlns:local="clr-namespace:Wpf_HW_2.Model"
         mc:Ignorable="d"
         Title="SelectProductWindow" Height="450" Width="800">
+    <Window.Resources>
+        
+        <HierarchicalDataTemplate DataType="{x:Type local:Folder}"
+                                  ItemsSource="{Binding Nodes}">
+            <DockPanel>
+                <Image Source="Image\folder.png"
+                       Width="48"
+                       DockPanel.Dock="Left"/>
+                <TextBlock Text="{Binding Path=Name}"/>
+            </DockPanel>
+        </HierarchicalDataTemplate>
+        
+        <DataTemplate DataType="{x:Type local:ProductNode}">
+            <DockPanel>
+                <Image Source="Image\candy.png"
+                       Width="48"
+                       DockPanel.Dock="Left"/>
+                <TextBlock Text="{Binding Path=Name}"/>
+            </DockPanel>
+        </DataTemplate>
+        
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

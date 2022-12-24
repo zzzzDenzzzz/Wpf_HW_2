@@ -12,6 +12,8 @@ namespace Wpf_HW_2
         public SelectProductWindow()
         {
             InitializeComponent();
+            _nodes = new List<INode>(UsersDB.Context.Folders);
+            ProductsTree.ItemsSource = _nodes;
         }
 
         List<INode> _nodes;
