@@ -32,6 +32,10 @@ namespace Wpf_HW_2.Pages
         {
             var sw = new SelectProductWindow();
             sw.ShowDialog();
+            if (sw.SelectProduct != null)
+            {
+                _vm.AddProduct(sw.SelectProduct);
+            }
         }
     }
 }

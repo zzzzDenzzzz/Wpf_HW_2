@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Wpf_HW_2.Model;
 
 namespace Wpf_HW_2.ViewModel
@@ -83,9 +84,17 @@ namespace Wpf_HW_2.ViewModel
         /// <summary>
         /// добавляет новый товар в заказ
         /// </summary>
-        public void AddProduct()
+        public void AddProduct(Product product)
         {
+            var s = Products.FirstOrDefault(x => x.Product.Id == product.Id);
+            if (s != null)
+            {
+                s.Quantity++;
+                return;
+            }
 
+            Products.Add(new OrderProduct() { Product = product, Quantity = 1});
+            OnPropertyChanged(nameof(Price));
         }
         /// <summary>
         /// удаляет товар из заказа

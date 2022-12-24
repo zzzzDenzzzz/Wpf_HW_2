@@ -14,7 +14,8 @@
                 <Image Source="Image\folder.png"
                        Width="48"
                        DockPanel.Dock="Left"/>
-                <TextBlock Text="{Binding Path=Name}"/>
+                <TextBlock Text="{Binding Path=Name}"
+                           VerticalAlignment="Center"/>
             </DockPanel>
         </HierarchicalDataTemplate>
         
@@ -23,7 +24,8 @@
                 <Image Source="Image\candy.png"
                        Width="48"
                        DockPanel.Dock="Left"/>
-                <TextBlock Text="{Binding Path=Name}"/>
+                <TextBlock Text="{Binding Path=Name}"
+                           VerticalAlignment="Center"/>
             </DockPanel>
         </DataTemplate>
         
@@ -36,9 +38,23 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
-            <TreeView x:Name="ProductsTree">
-                
-            </TreeView>
+            <TreeView x:Name="ProductsTree"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid Width="300">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"
+                        Content="Выбрать"
+                        Click="Select_Click"/>
+                <Button Grid.Column="2"
+                        Content="Отмена"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

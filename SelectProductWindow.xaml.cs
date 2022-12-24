@@ -17,5 +17,20 @@ namespace Wpf_HW_2
         }
 
         List<INode> _nodes;
+
+        Product _selectProduct;
+        public Product SelectProduct { get => _selectProduct; }
+
+        private void Select_Click(object sender, RoutedEventArgs e)
+        {
+            ProductNode product = ProductsTree.SelectedItem as ProductNode;
+            // является ли папка ProductNode
+            if (product != null)
+            {
+                _selectProduct = product.Product;
+            }
+
+            Close();
+        }
     }
 }
