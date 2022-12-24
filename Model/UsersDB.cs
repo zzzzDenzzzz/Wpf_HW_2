@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Documents;
 
 namespace Wpf_HW_2.Model
 {
@@ -67,6 +69,44 @@ namespace Wpf_HW_2.Model
                     }
                 },
             };
+
+            Folders = new List<Folder>()
+            {
+                new Folder()
+                { 
+                    Name = "Конфеты", Nodes = new List<INode>()
+                    {
+                        new Folder()
+                        {
+                            Name = "Подпапка", Nodes = new List<INode>()
+                            { 
+                                new ProductNode(Products.First(x => x.Id == 1))
+                            }
+                        }, 
+                        new ProductNode(Products.First(x => x.Id == 2))
+                    }
+                },
+
+                new Folder()
+                { 
+                    Name = "Торты", Nodes = new List<INode>()
+                    {
+                        {
+                            new ProductNode(Products.First(x => x.Id == 3))
+                        }
+                    }
+                },
+
+                new Folder()
+                { 
+                    Name = "Прочее", Nodes = new List<INode>(Products.ToList().GetRange(3, 3).Select(x => new ProductNode(x)))
+                    {
+                        {
+                            new ProductNode(Products.First(x => x.Id == 3))
+                        }
+                    }
+                }
+            };
         }
         /// <summary>
         /// список пользователей
@@ -91,6 +131,8 @@ namespace Wpf_HW_2.Model
             new Product(){Id = 5, Name = "Мармеладные мишки", Price = 349M},
             new Product(){Id = 6, Name = "Цукаты из ананаса", Price = 299M},
         };
+
+        public List<Folder> Folders { get; set; }
         /// <summary>
         /// список заказов
         /// </summary>
