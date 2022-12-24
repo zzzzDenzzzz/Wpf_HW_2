@@ -89,7 +89,8 @@
                                         IsReadOnly="True"/>
                     <DataGridTextColumn Header="Количество"
                                         Binding="{Binding Path=Quantity,
-                                        UpdateSourceTrigger=PropertyChanged}"/>
+                                        UpdateSourceTrigger=PropertyChanged,
+                                        StringFormat='{}{0:d}'}"/>
                     <DataGridTextColumn Header="Цена"
                                         Binding="{Binding Path=Product.Price}"
                                         IsReadOnly="True"/>
